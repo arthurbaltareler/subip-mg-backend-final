@@ -1,0 +1,1757 @@
+_type: export
+__export_format: 4
+__export_date: 2026-06-03T22:35:00.000Z
+__export_source: insomnia.desktop.app:v2023.5.8
+resources:
+  - _id: wrk_subip_mg_crud
+    parentId: null
+    modified: 1780000000000
+    created: 1780000000000
+    name: SUBiP-MG - Backend Completo
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: fld_subip_acervo
+    parentId: wrk_subip_mg_crud
+    modified: 1780000000080
+    created: 1780000000080
+    name: Acervo
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -500
+    _type: request_group
+  - _id: req_subip_acervo_listar
+    parentId: fld_subip_acervo
+    modified: 1780000000081
+    created: 1780000000081
+    url: http://localhost:8080/acervo
+    name: Listar acervo
+    description: "Lista o acervo a partir dos exemplares, trazendo livro, genero, biblioteca e situacao."
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -500
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_acervo_por_titulo
+    parentId: fld_subip_acervo
+    modified: 1780000000082
+    created: 1780000000082
+    url: http://localhost:8080/acervo?titulo=dom
+    name: Buscar por titulo
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -400
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_acervo_por_genero
+    parentId: fld_subip_acervo
+    modified: 1780000000122
+    created: 1780000000122
+    url: http://localhost:8080/acervo?generoId=1
+    name: Buscar por genero
+    description: "Filtro usado pelo frontend de acervo."
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -350
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_acervo_por_biblioteca
+    parentId: fld_subip_acervo
+    modified: 1780000000083
+    created: 1780000000083
+    url: http://localhost:8080/acervo?bibliotecaId=1
+    name: Buscar por biblioteca
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -300
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_acervo_por_situacao
+    parentId: fld_subip_acervo
+    modified: 1780000000084
+    created: 1780000000084
+    url: http://localhost:8080/acervo?situacao=DISPONIVEL
+    name: Buscar por situacao
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -200
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_subip_pessoa
+    parentId: wrk_subip_mg_crud
+    modified: 1780000000001
+    created: 1780000000001
+    name: Pessoa
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -400
+    _type: request_group
+  - _id: req_subip_pessoa_listar
+    parentId: fld_subip_pessoa
+    modified: 1780000000010
+    created: 1780000000010
+    url: http://localhost:8080/pessoas
+    name: Listar
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -500
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_pessoa_buscar
+    parentId: fld_subip_pessoa
+    modified: 1780000000011
+    created: 1780000000011
+    url: http://localhost:8080/pessoas/1
+    name: Buscar por ID
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -400
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_pessoa_cadastrar
+    parentId: fld_subip_pessoa
+    modified: 1780000000012
+    created: 1780000000012
+    url: http://localhost:8080/pessoas
+    name: Cadastrar
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "Diego Costa",
+          "cpf": "44444444444",
+          "email": "diego.costa@email.com"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -300
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_pessoa_alterar
+    parentId: fld_subip_pessoa
+    modified: 1780000000013
+    created: 1780000000013
+    url: http://localhost:8080/pessoas/4
+    name: Alterar
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "Diego Costa Silva",
+          "cpf": "44444444444",
+          "email": "diego.silva@email.com"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -200
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_pessoa_excluir
+    parentId: fld_subip_pessoa
+    modified: 1780000000014
+    created: 1780000000014
+    url: http://localhost:8080/pessoas/4
+    name: Excluir
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -100
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_pessoa_emprestimos
+    parentId: fld_subip_pessoa
+    modified: 1780000000085
+    created: 1780000000085
+    url: http://localhost:8080/pessoas/1/emprestimos
+    name: Emprestimos da pessoa
+    description: "Lista os emprestimos vinculados a uma pessoa."
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -50
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_subip_usuario
+    parentId: wrk_subip_mg_crud
+    modified: 1780000000110
+    created: 1780000000110
+    name: Usuario
+    description: "Usuario ainda nao autentica: por enquanto organiza login e perfil vinculados a uma pessoa."
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -375
+    _type: request_group
+  - _id: req_subip_usuario_listar
+    parentId: fld_subip_usuario
+    modified: 1780000000111
+    created: 1780000000111
+    url: http://localhost:8080/usuarios
+    name: Listar
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -500
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_usuario_buscar
+    parentId: fld_subip_usuario
+    modified: 1780000000112
+    created: 1780000000112
+    url: http://localhost:8080/usuarios/1
+    name: Buscar por ID
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -400
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_usuario_cadastrar_leitor
+    parentId: fld_subip_usuario
+    modified: 1780000000113
+    created: 1780000000113
+    url: http://localhost:8080/usuarios
+    name: Cadastrar LEITOR
+    description: "Use depois de cadastrar uma pessoa livre. O pessoaId 4 costuma ser o Diego do exemplo de Pessoa."
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "login": "diego.leitor",
+          "perfil": "LEITOR",
+          "pessoaId": 4
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -300
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_usuario_cadastrar_atendente
+    parentId: fld_subip_usuario
+    modified: 1780000000114
+    created: 1780000000114
+    url: http://localhost:8080/usuarios
+    name: Cadastrar ATENDENTE
+    description: "Ajuste pessoaId para uma pessoa que ainda nao tenha usuario."
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "login": "maria.atendente",
+          "perfil": "ATENDENTE",
+          "pessoaId": 5
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -290
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_usuario_cadastrar_admin
+    parentId: fld_subip_usuario
+    modified: 1780000000115
+    created: 1780000000115
+    url: http://localhost:8080/usuarios
+    name: Cadastrar ADMIN
+    description: "Ajuste pessoaId para uma pessoa que ainda nao tenha usuario."
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "login": "joao.admin",
+          "perfil": "ADMIN",
+          "pessoaId": 6
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -280
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_usuario_alterar
+    parentId: fld_subip_usuario
+    modified: 1780000000116
+    created: 1780000000116
+    url: http://localhost:8080/usuarios/4
+    name: Alterar
+    description: "Exemplo para alterar o usuario criado no cadastro LEITOR."
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "login": "diego.atendente",
+          "perfil": "ATENDENTE",
+          "pessoaId": 4
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -200
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_usuario_excluir
+    parentId: fld_subip_usuario
+    modified: 1780000000117
+    created: 1780000000117
+    url: http://localhost:8080/usuarios/4
+    name: Excluir
+    description: "Exemplo para excluir o usuario criado no cadastro LEITOR."
+    method: DELETE
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -100
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_subip_livro
+    parentId: wrk_subip_mg_crud
+    modified: 1780000000020
+    created: 1780000000020
+    name: Livro
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -300
+    _type: request_group
+  - _id: fld_subip_genero
+    parentId: wrk_subip_mg_crud
+    modified: 1780000000090
+    created: 1780000000090
+    name: Genero
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -350
+    _type: request_group
+  - _id: req_subip_genero_listar
+    parentId: fld_subip_genero
+    modified: 1780000000091
+    created: 1780000000091
+    url: http://localhost:8080/generos
+    name: Listar
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -500
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_genero_buscar
+    parentId: fld_subip_genero
+    modified: 1780000000092
+    created: 1780000000092
+    url: http://localhost:8080/generos/1
+    name: Buscar por ID
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -400
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_genero_cadastrar
+    parentId: fld_subip_genero
+    modified: 1780000000093
+    created: 1780000000093
+    url: http://localhost:8080/generos
+    name: Cadastrar
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "descricao": "Romance Regionalista"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -300
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_genero_alterar
+    parentId: fld_subip_genero
+    modified: 1780000000094
+    created: 1780000000094
+    url: http://localhost:8080/generos/4
+    name: Alterar
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "descricao": "Romance Social"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -200
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_genero_excluir
+    parentId: fld_subip_genero
+    modified: 1780000000095
+    created: 1780000000095
+    url: http://localhost:8080/generos/4
+    name: Excluir
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -100
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_livro_listar
+    parentId: fld_subip_livro
+    modified: 1780000000021
+    created: 1780000000021
+    url: http://localhost:8080/livros
+    name: Listar
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -500
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_livro_buscar
+    parentId: fld_subip_livro
+    modified: 1780000000022
+    created: 1780000000022
+    url: http://localhost:8080/livros/1
+    name: Buscar por ID
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -400
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_livro_buscar_titulo
+    parentId: fld_subip_livro
+    modified: 1780000000086
+    created: 1780000000086
+    url: http://localhost:8080/livros?titulo=dom
+    name: Buscar por titulo
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -350
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_livro_buscar_isbn
+    parentId: fld_subip_livro
+    modified: 1780000000087
+    created: 1780000000087
+    url: http://localhost:8080/livros?isbn=9788535910663
+    name: Buscar por ISBN
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -325
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_livro_exemplares
+    parentId: fld_subip_livro
+    modified: 1780000000088
+    created: 1780000000088
+    url: http://localhost:8080/livros/1/exemplares
+    name: Exemplares do livro
+    description: "Lista os exemplares cadastrados para um livro."
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -310
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_livro_cadastrar
+    parentId: fld_subip_livro
+    modified: 1780000000023
+    created: 1780000000023
+    url: http://localhost:8080/livros
+    name: Cadastrar
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "titulo": "Vidas Secas",
+          "isbn": "9788535926138",
+          "generoId": 1
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -300
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_livro_alterar
+    parentId: fld_subip_livro
+    modified: 1780000000024
+    created: 1780000000024
+    url: http://localhost:8080/livros/4
+    name: Alterar
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "titulo": "Vidas Secas - Edicao Atualizada",
+          "isbn": "9788535926138",
+          "generoId": 1
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -200
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_livro_excluir
+    parentId: fld_subip_livro
+    modified: 1780000000025
+    created: 1780000000025
+    url: http://localhost:8080/livros/4
+    name: Excluir
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -100
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_subip_biblioteca
+    parentId: wrk_subip_mg_crud
+    modified: 1780000000030
+    created: 1780000000030
+    name: Biblioteca
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -200
+    _type: request_group
+  - _id: req_subip_biblioteca_listar
+    parentId: fld_subip_biblioteca
+    modified: 1780000000031
+    created: 1780000000031
+    url: http://localhost:8080/bibliotecas
+    name: Listar
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -500
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_biblioteca_buscar
+    parentId: fld_subip_biblioteca
+    modified: 1780000000032
+    created: 1780000000032
+    url: http://localhost:8080/bibliotecas/1
+    name: Buscar por ID
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -400
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_biblioteca_cadastrar
+    parentId: fld_subip_biblioteca
+    modified: 1780000000033
+    created: 1780000000033
+    url: http://localhost:8080/bibliotecas
+    name: Cadastrar
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "Biblioteca Teste"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -300
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_biblioteca_alterar
+    parentId: fld_subip_biblioteca
+    modified: 1780000000034
+    created: 1780000000034
+    url: http://localhost:8080/bibliotecas/4
+    name: Alterar
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "Biblioteca Teste Atualizada"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -200
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_biblioteca_excluir
+    parentId: fld_subip_biblioteca
+    modified: 1780000000035
+    created: 1780000000035
+    url: http://localhost:8080/bibliotecas/4
+    name: Excluir
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -100
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_subip_exemplar
+    parentId: wrk_subip_mg_crud
+    modified: 1780000000040
+    created: 1780000000040
+    name: Exemplar
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -100
+    _type: request_group
+  - _id: req_subip_exemplar_listar
+    parentId: fld_subip_exemplar
+    modified: 1780000000041
+    created: 1780000000041
+    url: http://localhost:8080/exemplares
+    name: Listar
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -500
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_exemplar_buscar
+    parentId: fld_subip_exemplar
+    modified: 1780000000042
+    created: 1780000000042
+    url: http://localhost:8080/exemplares/1
+    name: Buscar por ID
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -400
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_exemplar_cadastrar
+    parentId: fld_subip_exemplar
+    modified: 1780000000043
+    created: 1780000000043
+    url: http://localhost:8080/exemplares
+    name: Cadastrar
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "tombo": "TOMBO-9999",
+          "situacao": "DISPONIVEL",
+          "livroId": 1,
+          "bibliotecaId": 1
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -300
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_exemplar_alterar
+    parentId: fld_subip_exemplar
+    modified: 1780000000044
+    created: 1780000000044
+    url: http://localhost:8080/exemplares/5
+    name: Alterar
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "tombo": "TOMBO-9999",
+          "situacao": "INDISPONIVEL",
+          "livroId": 1,
+          "bibliotecaId": 1
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -200
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_exemplar_excluir
+    parentId: fld_subip_exemplar
+    modified: 1780000000045
+    created: 1780000000045
+    url: http://localhost:8080/exemplares/5
+    name: Excluir
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -100
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_subip_emprestimo
+    parentId: wrk_subip_mg_crud
+    modified: 1780000000060
+    created: 1780000000060
+    name: Emprestimo
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: 0
+    _type: request_group
+  - _id: req_subip_emprestimo_listar
+    parentId: fld_subip_emprestimo
+    modified: 1780000000061
+    created: 1780000000061
+    url: http://localhost:8080/emprestimos
+    name: Listar
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -500
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_emprestimo_buscar
+    parentId: fld_subip_emprestimo
+    modified: 1780000000062
+    created: 1780000000062
+    url: http://localhost:8080/emprestimos/1
+    name: Buscar por ID
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -400
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_emprestimo_por_pessoa
+    parentId: fld_subip_emprestimo
+    modified: 1780000000120
+    created: 1780000000120
+    url: http://localhost:8080/emprestimos/pessoa/1
+    name: Emprestimos por pessoa
+    description: "Lista os emprestimos vinculados ao id da pessoa/leitor."
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -350
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_emprestimo_por_leitor
+    parentId: fld_subip_emprestimo
+    modified: 1780000000123
+    created: 1780000000123
+    url: http://localhost:8080/emprestimos/leitor/1
+    name: Emprestimos por leitor
+    description: "Alias usado pelo frontend. Retorna tambem tituloLivro, tombo e biblioteca."
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -340
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_emprestimo_registrar
+    parentId: fld_subip_emprestimo
+    modified: 1780000000063
+    created: 1780000000063
+    url: http://localhost:8080/emprestimos
+    name: Registrar
+    description: "Registra emprestimo apenas se o exemplar estiver DISPONIVEL. A devolucao prevista e calculada automaticamente em 15 dias."
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "dataRetirada": "2026-06-12",
+          "exemplarId": 1,
+          "pessoaId": 1
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -300
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_emprestimo_renovar
+    parentId: fld_subip_emprestimo
+    modified: 1780000000064
+    created: 1780000000064
+    url: http://localhost:8080/emprestimos/1/renovacao
+    name: Renovar
+    description: "Renova somente emprestimo aberto e atualiza a data de devolucao prevista."
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "dataDevolucaoPrevista": "2026-07-04"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -200
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_emprestimo_devolver
+    parentId: fld_subip_emprestimo
+    modified: 1780000000065
+    created: 1780000000065
+    url: http://localhost:8080/emprestimos/1/devolucao
+    name: Devolver
+    description: "Registra a devolucao. Se houver reserva ativa, o exemplar vira RESERVADO; caso contrario, volta para DISPONIVEL."
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "dataDevolucao": "2026-07-06"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -100
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_subip_validacoes
+    parentId: wrk_subip_mg_crud
+    modified: 1780000000070
+    created: 1780000000070
+    name: Validacoes e Erros
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: 100
+    _type: request_group
+  - _id: fld_subip_reserva
+    parentId: wrk_subip_mg_crud
+    modified: 1780000000100
+    created: 1780000000100
+    name: Reserva
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: 50
+    _type: request_group
+  - _id: req_subip_reserva_listar
+    parentId: fld_subip_reserva
+    modified: 1780000000101
+    created: 1780000000101
+    url: http://localhost:8080/reservas
+    name: Listar
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -500
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_reserva_buscar
+    parentId: fld_subip_reserva
+    modified: 1780000000102
+    created: 1780000000102
+    url: http://localhost:8080/reservas/1
+    name: Buscar por ID
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -400
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_reserva_por_pessoa
+    parentId: fld_subip_reserva
+    modified: 1780000000121
+    created: 1780000000121
+    url: http://localhost:8080/reservas/pessoa/2
+    name: Reservas por pessoa
+    description: "Lista as reservas vinculadas ao id da pessoa/leitor."
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -350
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_reserva_por_leitor
+    parentId: fld_subip_reserva
+    modified: 1780000000124
+    created: 1780000000124
+    url: http://localhost:8080/reservas/leitor/2
+    name: Reservas por leitor
+    description: "Alias usado pelo frontend. Retorna tambem tituloLivro, tombo e biblioteca."
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -340
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_reserva_registrar
+    parentId: fld_subip_reserva
+    modified: 1780000000103
+    created: 1780000000103
+    url: http://localhost:8080/reservas
+    name: Registrar
+    description: "Registra reserva somente para exemplar emprestado. O exemplar continua EMPRESTADO ate a devolucao."
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "pessoaId": 2,
+          "exemplarId": 1
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -300
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_reserva_cancelar
+    parentId: fld_subip_reserva
+    modified: 1780000000104
+    created: 1780000000104
+    url: http://localhost:8080/reservas/1/cancelamento
+    name: Cancelar
+    description: "Cancela uma reserva ativa."
+    method: PUT
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -200
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_validacao_cpf_duplicado
+    parentId: fld_subip_validacoes
+    modified: 1780000000071
+    created: 1780000000071
+    url: http://localhost:8080/pessoas
+    name: CPF duplicado
+    description: "Erro esperado: CPF ja cadastrado."
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "Pessoa CPF Repetido",
+          "cpf": "11111111111",
+          "email": "cpf.repetido@email.com"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -500
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_validacao_isbn_invalido
+    parentId: fld_subip_validacoes
+    modified: 1780000000072
+    created: 1780000000072
+    url: http://localhost:8080/livros
+    name: ISBN invalido
+    description: "Erro esperado: ISBN fora do formato aceito."
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "titulo": "Livro com ISBN invalido",
+          "isbn": "978-85-359-0277-7",
+          "generoId": 1
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -400
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_validacao_isbn_formatado
+    parentId: fld_subip_validacoes
+    modified: 1780000000073
+    created: 1780000000073
+    url: http://localhost:8080/livros
+    name: ISBN formatado valido
+    description: "Formato aceito: 13 digitos ou 17 caracteres com pontos e hifens no padrao 978.85.359-0277-7."
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "titulo": "Livro com ISBN formatado",
+          "isbn": "978.85.359-0277-7",
+          "generoId": 1
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -300
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_validacao_tombo_duplicado
+    parentId: fld_subip_validacoes
+    modified: 1780000000074
+    created: 1780000000074
+    url: http://localhost:8080/exemplares
+    name: Tombo duplicado
+    description: "Erro esperado: tombo ja cadastrado."
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "tombo": "TOMBO-0001",
+          "situacao": "DISPONIVEL",
+          "livroId": 1,
+          "bibliotecaId": 1
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -200
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_validacao_login_duplicado
+    parentId: fld_subip_validacoes
+    modified: 1780000000118
+    created: 1780000000118
+    url: http://localhost:8080/usuarios
+    name: Login duplicado
+    description: "Erro esperado: Login ja cadastrado."
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "login": "ana",
+          "perfil": "LEITOR",
+          "pessoaId": 4
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -175
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_validacao_pessoa_usuario_duplicado
+    parentId: fld_subip_validacoes
+    modified: 1780000000119
+    created: 1780000000119
+    url: http://localhost:8080/usuarios
+    name: Pessoa com usuario duplicado
+    description: "Erro esperado: Pessoa ja possui usuario cadastrado."
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "login": "ana.novo",
+          "perfil": "LEITOR",
+          "pessoaId": 1
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -150
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_subip_validacao_exemplar_indisponivel
+    parentId: fld_subip_validacoes
+    modified: 1780000000075
+    created: 1780000000075
+    url: http://localhost:8080/emprestimos
+    name: Emprestar exemplar indisponivel
+    description: "Erro esperado: so e permitido emprestar exemplar DISPONIVEL. O exemplar 2 vem como EMPRESTADO no import.sql."
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "dataRetirada": "2026-06-12",
+          "exemplarId": 2,
+          "pessoaId": 1
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -100
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_subip_mg_base
+    parentId: wrk_subip_mg_crud
+    modified: 1780000000050
+    created: 1780000000050
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 100
+    _type: environment
+  - _id: jar_subip_mg_default
+    parentId: wrk_subip_mg_crud
+    modified: 1780000000051
+    created: 1780000000051
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_subip_mg_crud
+    parentId: wrk_subip_mg_crud
+    modified: 1780000000052
+    created: 1780000000052
+    fileName: SUBiP-MG - Backend Completo
+    contents: ""
+    contentType: yaml
+    _type: api_spec
