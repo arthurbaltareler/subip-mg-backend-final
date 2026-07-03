@@ -23,14 +23,18 @@ public interface ExemplarRepository extends JpaRepository<Exemplar, Long> {
 			JOIN FETCH e.livro l
 			JOIN FETCH l.genero g
 			JOIN FETCH e.biblioteca b
-			WHERE (:titulo IS NULL OR LOWER(l.titulo) LIKE LOWER(CONCAT('%', :titulo, '%')))
-			AND (:generoId IS NULL OR g.id = :generoId)
-			AND (:bibliotecaId IS NULL OR b.id = :bibliotecaId)
-			AND (:situacao IS NULL OR e.situacao = :situacao)
+			WHERE (:filtrarTitulo = false OR LOWER(l.titulo) LIKE LOWER(CONCAT('%', :titulo, '%')))
+			AND (:filtrarGenero = false OR g.id = :generoId)
+			AND (:filtrarBiblioteca = false OR b.id = :bibliotecaId)
+			AND (:filtrarSituacao = false OR e.situacao = :situacao)
 			""")
 	List<Exemplar> buscarAcervo(
 			@Param("titulo") String titulo,
+			@Param("filtrarTitulo") boolean filtrarTitulo,
 			@Param("generoId") Long generoId,
+			@Param("filtrarGenero") boolean filtrarGenero,
 			@Param("bibliotecaId") Long bibliotecaId,
-			@Param("situacao") SituacaoExemplar situacao);
+			@Param("filtrarBiblioteca") boolean filtrarBiblioteca,
+			@Param("situacao") SituacaoExemplar situacao,
+			@Param("filtrarSituacao") boolean filtrarSituacao);
 }

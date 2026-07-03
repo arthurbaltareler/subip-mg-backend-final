@@ -20,8 +20,17 @@ public class AcervoService {
 	// O acervo nasce do exemplar porque disponibilidade e localizacao pertencem a ele.
 	@Transactional(readOnly = true)
 	public List<AcervoResponseDTO> listar(String titulo, Long generoId, Long bibliotecaId, SituacaoExemplar situacao) {
-		List<Exemplar> lista = exemplarRepository.buscarAcervo(normalizarTexto(titulo), generoId, bibliotecaId,
-				situacao);
+		String tituloNormalizado = normalizarTexto(titulo);
+
+		List<Exemplar> lista = exemplarRepository.buscarAcervo(
+				tituloNormalizado == null ? "" : tituloNormalizado,
+				tituloNormalizado != null,
+				generoId == null ? -1L : generoId,
+				generoId != null,
+				bibliotecaId == null ? -1L : bibliotecaId,
+				bibliotecaId != null,
+				situacao == null ? SituacaoExemplar.DISPONIVEL : situacao,
+				situacao != null);
 		return lista.stream().map(AcervoResponseDTO::new).toList();
 	}
 

@@ -32,7 +32,14 @@ public class LivroService {
 
 	@Transactional(readOnly = true)
 	public List<LivroResponseDTO> listar(String titulo, String isbn) {
-		List<Livro> lista = livroRepository.buscarPorFiltros(normalizarTexto(titulo), normalizarTexto(isbn));
+		String tituloNormalizado = normalizarTexto(titulo);
+		String isbnNormalizado = normalizarTexto(isbn);
+
+		List<Livro> lista = livroRepository.buscarPorFiltros(
+				tituloNormalizado == null ? "" : tituloNormalizado,
+				tituloNormalizado != null,
+				isbnNormalizado == null ? "" : isbnNormalizado,
+				isbnNormalizado != null);
 		return lista.stream().map(LivroResponseDTO::new).toList();
 	}
 
