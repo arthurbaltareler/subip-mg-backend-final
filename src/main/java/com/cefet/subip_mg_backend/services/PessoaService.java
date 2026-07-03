@@ -51,7 +51,7 @@ public class PessoaService {
 	public List<EmprestimoResponseDTO> listarEmprestimos(Long id) {
 		// Diferencia pessoa inexistente de pessoa existente sem emprestimos.
 		if (!pessoaRepository.existsById(id)) {
-			throw new ResourceNotFoundException("Pessoa nao encontrada. Id: " + id);
+			throw new ResourceNotFoundException("Pessoa não encontrada. Id: " + id);
 		}
 
 		List<Emprestimo> lista = emprestimoRepository.findByPessoaId(id);
@@ -85,7 +85,7 @@ public class PessoaService {
 		}
 
 		if (pessoaRepository.existsByEmail(dto.getEmail()) && !entity.getEmail().equals(dto.getEmail())) {
-			throw new DatabaseException("Email ja cadastrado.");
+			throw new DatabaseException("Email já cadastrado.");
 		}
 
 		copiarDtoParaEntidade(dto, entity);
@@ -97,19 +97,19 @@ public class PessoaService {
 	@Transactional
 	public void excluir(Long id) {
 		if (!pessoaRepository.existsById(id)) {
-			throw new ResourceNotFoundException("Pessoa nao encontrada. Id: " + id);
+			throw new ResourceNotFoundException("Pessoa não encontrada. Id: " + id);
 		}
 
 		if (emprestimoRepository.existsByPessoaId(id)) {
-			throw new DatabaseException("Nao e possivel excluir uma pessoa que possui emprestimos cadastrados.");
+			throw new DatabaseException("Não é possível excluir uma pessoa que possui empréstimos cadastrados.");
 		}
 
 		if (reservaRepository.existsByPessoaId(id)) {
-			throw new DatabaseException("Nao e possivel excluir uma pessoa que possui reservas cadastradas.");
+			throw new DatabaseException("Não é possível excluir uma pessoa que possui reservas cadastradas.");
 		}
 
 		if (usuarioRepository.existsByPessoaId(id)) {
-			throw new DatabaseException("Nao e possivel excluir uma pessoa que possui usuario cadastrado.");
+			throw new DatabaseException("Não é possível excluir uma pessoa que possui usuário cadastrado.");
 		}
 
 		pessoaRepository.deleteById(id);

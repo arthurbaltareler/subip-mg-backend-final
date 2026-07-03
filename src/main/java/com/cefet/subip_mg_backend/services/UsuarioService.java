@@ -10,6 +10,7 @@ import com.cefet.subip_mg_backend.dto.UsuarioRequestDTO;
 import com.cefet.subip_mg_backend.dto.UsuarioResponseDTO;
 import com.cefet.subip_mg_backend.entities.Pessoa;
 import com.cefet.subip_mg_backend.entities.Usuario;
+import com.cefet.subip_mg_backend.enums.PerfilUsuario;
 import com.cefet.subip_mg_backend.exceptions.DatabaseException;
 import com.cefet.subip_mg_backend.exceptions.ResourceNotFoundException;
 import com.cefet.subip_mg_backend.repositories.PessoaRepository;
@@ -38,11 +39,18 @@ public class UsuarioService {
 
 	@Transactional
 	public UsuarioResponseDTO inserir(UsuarioRequestDTO dto) {
+
 		validarLoginDuplicado(dto.getLogin());
-		validarPessoaComUsuario(dto.getPessoaId());
+
+		if (dto.getPerfil() == PerfilUsuario.ADMIN) {
+			throw new DatabaseException("Não é permitido criar administradores.");
+		}
+
+		validarPessoaComMesmoPerfil(dto.getPessoaId(), dto.getPerfil());
 
 		Usuario entity = new Usuario();
 		copiarDtoParaEntidade(dto, entity);
+
 		entity = usuarioRepository.save(entity);
 
 		return new UsuarioResponseDTO(entity);
@@ -52,12 +60,17 @@ public class UsuarioService {
 	public UsuarioResponseDTO alterar(Long id, UsuarioRequestDTO dto) {
 		Usuario entity = buscarEntidadePorId(id);
 
+		if (dto.getPerfil() == PerfilUsuario.ADMIN) {
+			throw new DatabaseException(
+					"Não é permitido criar administradores.");
+		}
+
 		if (!entity.getLogin().equals(dto.getLogin())) {
 			validarLoginDuplicado(dto.getLogin());
 		}
 
-		if (!entity.getPessoa().getId().equals(dto.getPessoaId())) {
-			validarPessoaComUsuario(dto.getPessoaId());
+		if (!entity.getPessoa().getId().equals(dto.getPessoaId()) || entity.getPerfil() != dto.getPerfil()) {
+			validarPessoaComMesmoPerfil(dto.getPessoaId(), dto.getPerfil());
 		}
 
 		copiarDtoParaEntidade(dto, entity);
@@ -86,9 +99,15 @@ public class UsuarioService {
 		}
 	}
 
-	private void validarPessoaComUsuario(Long pessoaId) {
-		if (usuarioRepository.existsByPessoaId(pessoaId)) {
-			throw new DatabaseException("Pessoa ja possui usuario cadastrado.");
+	private void validarPessoaComMesmoPerfil(Long pessoaId, PerfilUsuario perfil) {
+
+		Pessoa pessoa = pessoaRepository.findById(pessoaId)
+				.orElseThrow(() -> new ResourceNotFoundException("Pessoa nao encontrada."));
+
+		Usuario usuario = usuarioRepository.findByPessoaAndPerfil(pessoa, perfil);
+
+		if (usuario != null) {
+			throw new DatabaseException("A pessoa ja possui um usuario com esse perfil.");
 		}
 	}
 

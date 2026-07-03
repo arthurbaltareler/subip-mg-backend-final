@@ -10,7 +10,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -23,16 +23,15 @@ public class Usuario {
 	@Column(nullable = false, unique = true, length = 100)
 	private String login;
 
-
-	@Column(nullable = false,length = 100)
+	@Column(nullable = false, length = 100)
 	private String senha;
 
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false, length = 20)
 	private PerfilUsuario perfil;
 
-	@OneToOne
-	@JoinColumn(name = "pessoa_id", nullable = false, unique = true)
+	@ManyToOne
+	@JoinColumn(name = "pessoa_id", nullable = false)
 	private Pessoa pessoa;
 
 	public Usuario() {
@@ -62,7 +61,6 @@ public class Usuario {
 		this.login = login;
 	}
 
-
 	public String getSenha() {
 		return senha;
 	}
@@ -70,7 +68,7 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	
+
 	public PerfilUsuario getPerfil() {
 		return perfil;
 	}
